@@ -98,7 +98,8 @@ stages:
             - sh
             - Xamarin.iOS
         variables:
-          provisionator.osxPath : '/build/provisioning/provisioning.csx'
+          provisionator.xcode : '/eng/provisioning/xcode.csx'
+          provisionator.osxPath : '/eng/provisioning/provisioning.csx'
           buildConfiguration: $(DefaultBuildConfiguration)
           iOSCertSecureFileName: 'XamarinForms.p12'
           iOSProvisioningSecureFileName: 'Xamarin Forms iOS Provisioning.mobileprovision'

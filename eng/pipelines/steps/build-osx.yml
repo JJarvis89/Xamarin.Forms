@@ -6,7 +6,7 @@ steps:
     displayName: 'Provision Xcode'
     condition: ne(variables['REQUIRED_XCODE'], '')
     inputs:
-      provisioning_script: 'build/provisioning/xcode.csx'
+      provisioning_script: $(provisionator.xcode)
 
   - task: xamops.azdevex.provisionator-task.provisionator@1
     displayName: 'Provisionator'
