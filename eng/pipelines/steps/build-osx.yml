@@ -67,13 +67,13 @@ steps:
   - task: InstallAppleCertificate@2
     displayName: 'Install an Apple certificate'
     inputs:
-      certSecureFile: 'Xamarin Forms iOS Certificate.p12'
+      certSecureFile: $(iOSCertSecureFileName)
       certPwd: $(P12password)
 
   - task: InstallAppleProvisioningProfile@1
     displayName: 'Install an Apple provisioning profile'
     inputs:
-      provProfileSecureFile: 'Xamarin Forms iOS Provisioning.mobileprovision'
+      provProfileSecureFile: $(iOSProvisioningSecureFileName)
 
   - task: Bash@3
     displayName: 'Build Control Gallery IPA'
