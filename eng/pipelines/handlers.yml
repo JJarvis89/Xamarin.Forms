@@ -100,7 +100,7 @@ stages:
         variables:
           provisionator.osxPath : '/build/provisioning/provisioning.csx'
           buildConfiguration: $(DefaultBuildConfiguration)
-          iOSCertSecureFileName: 'Xamarin Forms iOS Certificate.p12'
+          iOSCertSecureFileName: 'XamarinForms.p12'
           iOSProvisioningSecureFileName: 'Xamarin Forms iOS Provisioning.mobileprovision'
         steps:
           - template: steps/build-osx.yml
