@@ -58,10 +58,18 @@ steps:
       TargetFolder: '$(System.DefaultWorkingDirectory)/Nuget'
 
   - task: NuGetCommand@2
-    displayName: 'NuGet restore'
+    displayName: 'NuGet restore Xamarin.Forms sln'
     inputs:
       command: restore
       restoreSolution: 'Xamarin.Forms.sln'
+      feedsToUse: config
+      nugetConfigPath: 'eng/DevopsNuget.config'
+
+  - task: NuGetCommand@2
+    displayName: 'NuGet restore ControlGallery'
+    inputs:
+      command: restore
+      restoreSolution: 'Xamarin.Forms.ControlGallery.sln'
       feedsToUse: config
       nugetConfigPath: 'eng/DevopsNuget.config'
 
