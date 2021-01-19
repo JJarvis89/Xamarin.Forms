@@ -100,7 +100,6 @@ stages:
         variables:
           provisionator.xcode : '$(System.DefaultWorkingDirectory)/eng/provisioning/xcode.csx'
           provisionator.osxPath : '$(System.DefaultWorkingDirectory)/eng/provisioning/provisioning.csx'
-          buildConfiguration: $(DefaultBuildConfiguration)
           iOSCertSecureFileName: 'XamarinForms.p12'
           iOSProvisioningSecureFileName: 'Xamarin Forms iOS Provisioning.mobileprovision'
         steps:

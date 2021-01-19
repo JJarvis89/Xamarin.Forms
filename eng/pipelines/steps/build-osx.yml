@@ -1,3 +1,4 @@
+
 steps:
   - checkout: self
     clean: true
@@ -53,7 +54,7 @@ steps:
     displayName: 'Copy Files to: $(System.DefaultWorkingDirectory)'
     condition: eq(variables['System.TeamProject'], 'DevDiv')
     inputs:
-      SourceFolder: '$(Build.ArtifactsDirectory)/nuget/$(buildConfiguration)'
+      SourceFolder: '$(Build.ArtifactsDirectory)/nuget/$(BuildConfiguration)'
       TargetFolder: '$(System.DefaultWorkingDirectory)/Nuget'
 
   - task: NuGetCommand@2
@@ -80,14 +81,14 @@ steps:
     inputs:
       targetType: 'filePath'
       filePath: 'build.sh'
-      arguments: --target cg-ios --BUILD_CONFIGURATION=$(buildConfiguration) --MSBuildArguments='${{ variables.MSBuildArguments_cg_ios }}'
+      arguments: --target cg-ios --BUILD_CONFIGURATION=$(BuildConfiguration) --MSBuildArguments='${{ variables.MSBuildArguments_cg_ios }}'
 
   - task: Bash@3
     displayName: 'Build iOS Tests'
     inputs:
       targetType: 'filePath'
       filePath: 'build.sh'
-      arguments: --target cg-ios-build-tests -BUILD_CONFIGURATION=$(buildConfiguration) --MSBuildArguments='${{ variables.MSBuildArguments_cg_ios }}'
+      arguments: --target cg-ios-build-tests -BUILD_CONFIGURATION=$(BuildConfiguration) --MSBuildArguments='${{ variables.MSBuildArguments_cg_ios }}'
 
   - task: CopyFiles@2
     displayName: 'Copy iOS Files for UITest'

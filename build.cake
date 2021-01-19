@@ -897,7 +897,7 @@ Task("cg-ios")
             buildSettings = buildSettings.WithRestore();
         }
 
-        MSBuild("./Xamarin.Forms.ControlGallery.iOS/Xamarin.Forms.ControlGallery.iOS.csproj", 
+        MSBuild("src/ControlGallery/src/Xamarin.Forms.ControlGallery.iOS/Xamarin.Forms.ControlGallery.iOS.csproj", 
             buildSettings);
     });
 
